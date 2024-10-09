@@ -90,8 +90,7 @@ function Footer() {
           </IconButton>
         </div>
         <br />
-        Insurance offered through Paymaster Insurance Agency, LLC (CA License
-        #!0L29422)
+        Insurance offered through Paymaster Management Solutions
         <br />
         <br />
         <div className="footer-links">
