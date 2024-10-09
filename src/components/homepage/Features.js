@@ -389,7 +389,7 @@ function Features() {
           Get More time to focus on <span> what you do best</span>
         </h2>
         <p>
-          OnPay simplifies paying and managing your team ⁠— so you have more
+          Paymaster simplifies paying and managing your team ⁠— so you have more
           time.
         </p>
 
@@ -404,9 +404,9 @@ function Features() {
           <button>Client Reviews</button>
         </div>
         <p>
-          “As a small business owner, I wear a lot of hats. OnPay saves me a lot
-          of time and headaches. Now I can focus on the 1,001 other things that
-          need my attention!”
+          “As a small business owner, I wear a lot of hats. Paymaster saves me a
+          lot of time and headaches. Now I can focus on the 1,001 other things
+          that need my attention!”
         </p>
         <span>— Carolyn, Cozy Oak Furniture</span>
       </Row>

@@ -45,7 +45,7 @@ function Footer() {
           <a href="#!">Explore all features</a>
         </Col>
         <Col xs={3}>
-          <h3>Why OnPay</h3>
+          <h3>Why Paymaster</h3>
           <a href="#!">Ratings and reviews</a>
           <a href="#!">Compare providers</a>
           <h3>Resources</h3>
@@ -90,7 +90,7 @@ function Footer() {
           </IconButton>
         </div>
         <br />
-        Insurance offered through OnPay Insurance Agency, LLC (CA License
+        Insurance offered through Paymaster Insurance Agency, LLC (CA License
         #!0L29422)
         <br />
         <br />
@@ -102,7 +102,7 @@ function Footer() {
         </div>
         <br />
         <br />
-        ©2024 OnPay, Inc.
+        ©2024 Paymaster, Inc.
       </Row>
     </Container>
   );
