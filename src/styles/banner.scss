@@ -1,0 +1,71 @@
+.banner-container {
+  height: 75vh;
+
+  .col-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      color: #045eac;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    h1 {
+      color: #131924;
+      font-size: 56px;
+      margin: 10px 0;
+
+      span {
+        color: #131924;
+        font-weight: 700;
+        font-size: 56px;
+      }
+    }
+
+    p {
+      color: #131924;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    // Adjust the button group
+    .btn-group {
+      display: flex; // Keep flex for button alignment
+      gap: 10px; // Adjust spacing between buttons
+
+      .btn {
+        padding: 15px 30px; // Adjust padding for button content
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        white-space: nowrap; // Prevent text wrapping
+        transition: all 0.3s ease-in-out;
+        flex: 0 0 auto;
+      }
+
+      // Style for the first button
+      .banner-btn-1 {
+        color: #fff;
+        background-color: #12a77a;
+
+        &:hover {
+          background-color: #11b485;
+        }
+      }
+
+      // Style for the second button
+      .banner-btn-2 {
+        color: #131924;
+        background-color: #fff;
+
+        &:hover {
+          background-color: #e7e7e7;
+        }
+      }
+    }
+  }
+}
