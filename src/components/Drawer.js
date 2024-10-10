@@ -6,10 +6,13 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Box from "@mui/material/Box";
 import { navItems } from "../assets/data/navItems";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
 function DrawerComponent(props) {
+  const navigate = useNavigate();
+
   return (
     <Drawer
       variant="temporary"
@@ -30,9 +33,12 @@ function DrawerComponent(props) {
         MUI
         <List>
           {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
+            <ListItem key={item.name} disablePadding>
+              <ListItemButton
+                sx={{ textAlign: "center" }}
+                onClick={() => navigate(item.url)}
+              >
+                <ListItemText primary={item.name} />
               </ListItemButton>
             </ListItem>
           ))}

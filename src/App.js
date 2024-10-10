@@ -9,12 +9,15 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import DrawerComponent from "./components/Drawer";
 import { navItems } from "./assets/data/navItems";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
+import "./App.css";
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -87,10 +90,11 @@ function App() {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button
-                key={item}
+                key={item.name}
                 sx={{ color: "#fff", fontSize: "14px", fontWeight: 400 }}
+                onClick={() => navigate(item.url)}
               >
-                {item}
+                {item.name}
               </Button>
             ))}
           </Box>
@@ -117,6 +121,7 @@ function App() {
         <Toolbar />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/about-us" element={<AboutUs />} />
         </Routes>
         <Footer />
       </Box>

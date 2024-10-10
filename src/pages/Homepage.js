@@ -10,7 +10,7 @@ function Homepage() {
 
   useEffect(() => {
     async function getData() {
-      const res = await axios("http://localhost:9000/api/get-data");
+      const res = await axios("http://3.109.139.127:9000/api/get-data");
       setData(res.data);
     }
 
