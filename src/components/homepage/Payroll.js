@@ -1,29 +1,24 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-function Payroll() {
+function Payroll(props) {
   return (
     <Container>
       <Row>
         <Col xs={5}>
-          <h3>Smart, streamlined payroll</h3>
-          <p>
-            Pay employees and contractors in just a few clicks and leave the
-            calculations, deductions, and payroll taxes to us. Powerful
-            integrations let you keep it all in sync with accounting software,
-            integrated benefits, and more.
-          </p>
+          <h3>{props.data?.product_1_heading}</h3>
+          <p>{props.data?.product_1_content}</p>
           <div className="btn-group">
-            <button className="btn-1">Get Started</button>
-            <button className="btn-2">Learn More</button>
+            <a href={props.data?.product_1_btn_1_link} className="btn-1">
+              {props.data?.product_1_btn_1_text}
+            </a>
+            <a href={props.data?.product_1_btn_2_link} className="btn-2">
+              {props.data?.product_1_btn_2_text}
+            </a>
           </div>
         </Col>
         <Col xs={7}>
-          <img
-            src={require("../../assets/images/payroll-img.webp")}
-            alt="payroll"
-            width={"100%"}
-          />
+          <img src={props.data?.product_1_img} alt="payroll" width={"100%"} />
         </Col>
       </Row>
     </Container>

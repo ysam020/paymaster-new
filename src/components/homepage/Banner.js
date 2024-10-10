@@ -2,30 +2,31 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../styles/banner.scss";
 
-function Banner() {
+function Banner(props) {
   return (
     <Container className="banner-container">
       <Row>
         <Col xs={4}>
-          <span>PAYROLL • HR • BENEFITS</span>
-          <h1>
-            <span>Integrated</span> and uncomplicated
-          </h1>
-          <p>
-            We give you everything you need to handle payroll, HR, and benefits
-            with confidence — so you can get down to business.
-          </p>
+          <span>{props.data?.banner_subheading}</span>
+          <h1>{props.data?.banner_heading}</h1>
+          <p>{props.data?.banner_content}</p>
           <div className="btn-group">
-            <button className="btn banner-btn-1">Get Started</button>
-            <button className="btn banner-btn-2">Look Inside</button>
+            <a
+              href={props.data?.banner_btn_1_link}
+              className="btn banner-btn-1"
+            >
+              {props.data?.banner_btn_1_text}
+            </a>
+            <a
+              href={props.data?.banner_btn_2_link}
+              className="btn banner-btn-2"
+            >
+              {props.data?.banner_btn_2_text}
+            </a>
           </div>
         </Col>
         <Col xs={8}>
-          <img
-            src={require("../../assets/images/banner-img.webp")}
-            alt=""
-            width="100%"
-          />
+          <img src={props.data?.banner_image} alt="" width="100%" />
         </Col>
       </Row>
     </Container>

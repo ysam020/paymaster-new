@@ -1,30 +1,24 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-function Benefits() {
+function Benefits(props) {
   return (
     <Container>
       <Row>
         <Col xs={5}>
-          <h3>Integrated benefits</h3>
-          <p>
-            From health insurance to workers’ comp to 401(k), we make it easy
-            for businesses of any size to offer employee benefits. Our licensed
-            experts can help you choose a great plan from the most popular
-            insurance carriers. We even automate the plan administration for
-            you.
-          </p>
+          <h3>{props.data?.product_3_heading}</h3>
+          <p>{props.data?.product_3_content}</p>
           <div className="btn-group">
-            <button className="btn-1">Get Started</button>
-            <button className="btn-2">Learn More</button>
+            <a href={props.data?.product_3_btn_1_link} className="btn-1">
+              {props.data?.product_3_btn_1_text}
+            </a>
+            <a href={props.data?.product_3_btn_2_link} className="btn-2">
+              {props.data?.product_3_btn_2_text}
+            </a>
           </div>
         </Col>
         <Col xs={7}>
-          <img
-            src={require("../../assets/images/benefits-img.webp")}
-            alt="benefits"
-            width={"100%"}
-          />
+          <img src={props.data?.product_3_img} alt="payroll" width={"100%"} />
         </Col>
       </Row>
     </Container>

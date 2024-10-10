@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,29 +14,44 @@ import Homepage from "./pages/Homepage";
 import Footer from "./components/Footer";
 
 function App() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [elevation, setElevation] = React.useState(0);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   // Handle scroll event to change AppBar elevation
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 0) {
-        setElevation(4); // Apply elevation when scrolled
-      } else {
-        setElevation(0); // Remove elevation when at the top
+  useEffect(() => {
+    const disableInspect = (e) => {
+      // Disable right-click context menu
+      if (e.type === "contextmenu") {
+        e.preventDefault();
+      }
+
+      // Key combinations to block inspect tools
+      if (
+        e.key === "F12" || // F12 for all OS
+        (e.ctrlKey &&
+          e.shiftKey &&
+          (e.key === "I" || e.key === "J" || e.key === "C")) || // Ctrl+Shift+I/J/C for Windows/Linux
+        (e.metaKey &&
+          e.altKey &&
+          (e.key === "I" || e.key === "J" || e.key === "C")) || // Cmd+Opt+I/J/C for macOS
+        (e.ctrlKey && e.key === "U") || // Ctrl+U for View Source in Windows/Linux
+        (e.metaKey && e.key === "U") // Cmd+U for View Source in macOS
+      ) {
+        e.preventDefault();
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Attach event listeners
+    document.addEventListener("contextmenu", disableInspect);
+    document.addEventListener("keydown", disableInspect);
 
-    // Clean up the event listener when the component is unmounted
+    // Cleanup on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("contextmenu", disableInspect);
+      document.removeEventListener("keydown", disableInspect);
     };
   }, []);
 
@@ -45,7 +60,7 @@ function App() {
       <CssBaseline />
       <AppBar
         component="nav"
-        elevation={elevation}
+        elevation={4}
         style={{ backgroundColor: "#035FAD" }}
       >
         <Toolbar>

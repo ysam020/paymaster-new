@@ -90,7 +90,7 @@ function Footer() {
           </IconButton>
         </div>
         <br />
-        Insurance offered through Paymaster Management Solutions
+        Insurance offered through Paymaster Management Solutions 
         <br />
         <br />
         <div className="footer-links">
